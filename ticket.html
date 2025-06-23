@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets - The Levy Pool</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .ticket-form {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .ticket-form input, .ticket-form select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .ticket-container {
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 2px dashed #0077be;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .barcode {
+            width: 200px;
+            height: 100px;
+            margin: 1rem auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html" style="color:white; text-decoration:none;">The Levy Pool</a></div>
+            <ul>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="buy-ticket">
+            <h2>Buy Your Ticket</h2>
+            <div class="ticket-form">
+                <form id="purchase-form">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="ticket-type">Ticket Type:</label>
+                    <select id="ticket-type" name="ticket-type">
+                        <option value="adult">Adult</option>
+                        <option value="child">Child</option>
+                        <option value="senior">Senior</option>
+                    </select>
+                    
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                    
+                    <button type="submit" class="btn">Purchase</button>
+                </form>
+            </div>
+
+            <div id="ticket-result" style="display:none;">
+                <h3>Your Ticket</h3>
+                <div class="ticket-container">
+                    <h4>The Levy Pool - Admission</h4>
+                    <p><strong>Name:</strong> <span id="ticket-name"></span></p>
+                    <p><strong>Type:</strong> <span id="ticket-type-display"></span></p>
+                    <p><strong>Quantity:</strong> <span id="ticket-quantity"></span></p>
+                    <img id="barcode-img" class="barcode" alt="barcode">
+                    <p>Present this at the entrance.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Levy Pool. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
